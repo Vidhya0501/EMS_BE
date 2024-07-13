@@ -4,6 +4,9 @@ import jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt'
 import multer from "multer";
 import path from "path";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const router = express.Router();
 
@@ -15,7 +18,7 @@ router.post("/adminlogin", (req, res) => {
       const email = result[0].email;
       const token = jwt.sign(
         { role: "admin", email: email, id: result[0].id },
-        "jwt_secret_key",
+        process.env.JWT_SECRET,
         { expiresIn: "1d" }
       );
       res.cookie('token', token)
