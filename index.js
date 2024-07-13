@@ -25,6 +25,7 @@ app.get('/verify',verifyUser, (req, res)=> {
     return res.json({Status: true, role: req.role, id: req.id})
 } )
 
-app.listen(process.env.PORT, () => {
+const PORT = process.env.PORT
+app.listen(PORT, () => {
     console.log(`App listening on the port ${PORT}`)
 })
