@@ -9,7 +9,7 @@ import cookieParser from "cookie-parser";
 const app = express();
 app.use(
   cors({
-    origin: ["https://employee-mngmnt-mysql-vidhya.netlify.app/"],
+    origin: ["https://employee-mngmnt-mysql-vidhya.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
